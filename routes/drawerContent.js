@@ -78,7 +78,7 @@ function DrawerContent(props) {
 
   getEmail();
 
-  fetch(`https://6d78d89c5ce7.ngrok.io/display`, {
+  fetch(`https://f2b638937c4b.ngrok.io/display`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

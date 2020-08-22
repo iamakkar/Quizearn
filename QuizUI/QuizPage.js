@@ -65,9 +65,13 @@ function QuizPage(props) {
   questionAnimation();
 
   function startRound() {
-    console.log('Round Started');
-    props.setAnswered(false);
-    props.setCorrect(false);
+    if (props.currentIndex > 4) {
+      setQuestionSet([]);
+    } else {
+      console.log('Round Started');
+      props.setAnswered(false);
+      props.setCorrect(false);
+    }
   }
 
   startRound();
@@ -81,9 +85,9 @@ function QuizPage(props) {
 
   socket.on('sendmyscore', data => {
     props.setOpponentScore(data);
+    props.setFlag(true);
     console.log('opponent has completed the quiz');
   });
-
   //SOCKET CODE ENDS HERE
 
   socket.on('accepted', async ques => {
@@ -236,6 +240,12 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: 'SET_OPPONENTSCORE',
         opponentScore: data,
+      });
+    },
+    setFlag: data => {
+      dispatch({
+        type: 'SET_FLAG',
+        flag: data,
       });
     },
   };

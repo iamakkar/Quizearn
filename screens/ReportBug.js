@@ -44,7 +44,7 @@ export default function reportBug({navigation}) {
       );
       return;
     } else {
-      await fetch('https://6d78d89c5ce7.ngrok.io/reportbug', {
+      await fetch('https://f2b638937c4b.ngrok.io/reportbug', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',

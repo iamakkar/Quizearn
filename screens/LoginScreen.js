@@ -39,7 +39,7 @@ function SignOutScreen(props) {
   const sendCred = async () => {
     const ase = AsyncStorage.setItem('email', Details.email);
 
-    fetch('https://6d78d89c5ce7.ngrok.io/signin', {
+    fetch('https://f2b638937c4b.ngrok.io/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

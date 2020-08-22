@@ -46,7 +46,7 @@ function App(props) {
 
   getEmail();
 
-  fetch(`https://6d78d89c5ce7.ngrok.io/display`, {
+  fetch(`https://f2b638937c4b.ngrok.io/display`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -228,7 +228,7 @@ function App(props) {
 
   function handleSearch(text) {
     setSearch(text);
-    fetch(`https://6d78d89c5ce7.ngrok.io/finduser`, {
+    fetch(`https://f2b638937c4b.ngrok.io/finduser`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

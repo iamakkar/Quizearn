@@ -4,6 +4,7 @@ const initialState = {
   bid: null,
   reduximurl: '',
   socketid: '', //this one's of the oponent
+  flag: false,
 };
 
 const topicState = (state = initialState, action) => {
@@ -30,6 +31,18 @@ const topicState = (state = initialState, action) => {
     return {
       ...state,
       socketid: action.socketid,
+    };
+  }
+  if (action.type == 'SET_FLAG') {
+    return {
+      ...state,
+      flag: action.flag,
+    };
+  }
+  if (action.type == 'SET_FLAG_AGAIN') {
+    return {
+      ...state,
+      flag: action.flag,
     };
   }
   return state;

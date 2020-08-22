@@ -13,6 +13,7 @@ import {Card, Title, IconButton, Button} from 'react-native-paper';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {Courasol} from '../screens/courasol';
 import AsyncStorage from '@react-native-community/async-storage';
+import {connect} from 'react-redux';
 
 import mathsSubTopics from '../Subjects/MathsSubTopics';
 import physicsSubTopics from '../Subjects/PhysicsSubTopics';
@@ -29,7 +30,9 @@ const MoreOptions = <FontAwesome5 name={'menu'} solid />;
 
 import {socket} from '../routes/socket';
 
-export default function Home({navigation}) {
+function Home(props) {
+  let navigation = props.navigation;
+
   const [mathematicsModalVisible, setMathematicsModalVisible] = useState(false);
   const [physicsModalVisible, setPhysicsModalVisible] = useState(false);
   const [chemistryModalVisible, setChemistryModalVisible] = useState(false);
@@ -94,6 +97,7 @@ export default function Home({navigation}) {
       socketid: socketdata.socketid,
       mysocketid: socketdata.mysocketid,
     });
+    props.setosocketid(socketdata.mysocketid);
     setreqmodalvisible(!reqmodalvisible);
     navigation.navigate('Quiz');
   }
@@ -508,25 +512,18 @@ const styles = StyleSheet.create({
   },
 });
 
-//jeene laga hoon
-//pehle se zyaada
+const mapDispatchToProps = dispatch => {
+  return {
+    setosocketid: data => {
+      dispatch({
+        type: 'SET_OSOCKETID',
+        socketid: data,
+      });
+    },
+  };
+};
 
-/* <Modal
-animationType="slide"
-transparent={true}
-visible={modalVisible} >
-<View style={styles.centeredView}>
-  <View style={styles.modalView}>
-    <Text style={styles.modalText}>Hello World!</Text>
-
-    <TouchableHighlight
-      style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
-      onPress={() => {
-        setModalVisible(!modalVisible);
-      }}
-    >
-      <Text style={styles.textStyle}>Hide Modal</Text>
-    </TouchableHighlight>
-  </View>
-</View>
-</Modal> */
+export default connect(
+  undefined,
+  mapDispatchToProps,
+)(Home);

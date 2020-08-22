@@ -37,7 +37,7 @@ function BidScreen(props) {
 
   getEmail();
 
-  fetch(`https://6d78d89c5ce7.ngrok.io/display`, {
+  fetch(`https://f2b638937c4b.ngrok.io/display`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -54,7 +54,7 @@ function BidScreen(props) {
 
   async function sendBid() {
     props.setReduxBid(bid);
-    const socket = await io('https://6d78d89c5ce7.ngrok.io');
+    const socket = await io('https://f2b638937c4b.ngrok.io');
     await socket.emit('setBid', bid);
     navigation.navigate('Select Player');
   }

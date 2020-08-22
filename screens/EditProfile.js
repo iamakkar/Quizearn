@@ -58,7 +58,7 @@ function EditProfilePage(props) {
           type: response.type,
           name: response.fileName,
         });
-        fetch('https://6d78d89c5ce7.ngrok.io/uploadimage', {
+        fetch('https://f2b638937c4b.ngrok.io/uploadimage', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -141,7 +141,7 @@ function EditProfilePage(props) {
   }
 
   const sendCred = async () => {
-    fetch('https://6d78d89c5ce7.ngrok.io/enterUserDetails', {
+    fetch('https://f2b638937c4b.ngrok.io/enterUserDetails', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

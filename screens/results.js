@@ -39,16 +39,24 @@ const onShare = async () => {
   }
 };
 
-let flag = 0;
 function Result(props) {
   let navigation = props.navigation;
 
-  const score1 = useState(props.score);
-  const [score2, setScore2] = useState(props.opponentScore);
+  const [score2, setScore2] = useState(props.opponentScore); //kal yaha kaam karna hai
   const [isWinner, setIsWinner] = useState(9);
 
   const [email, setEmail] = useState('');
   const [firstName, setfirstName] = useState('');
+
+  useEffect(async () => {
+    socket.emit('sendmyscore', {
+      score: props.score,
+      socketid: props.socketid,
+    });
+    if (props.flag == true) {
+      await compare();
+    }
+  }, []);
 
   const get = async () => {
     try {
@@ -67,35 +75,29 @@ function Result(props) {
 
   get();
 
-  socket.emit('sendmyscore', {
-    score: props.score,
-    socketid: props.socketid,
-  });
-
-  if (score2 !== 0) {
-    compare();
-  }
-
   socket.on('sendmyscore', data => {
+    console.log('recieved the socket');
+    console.log('Score is' + data);
     setScore2(data);
+    compare();
   });
 
   function compare() {
-    console.log(score1);
-    console.log(score2);
-    if (score1 > score2) {
+    if (props.score > score2) {
       setIsWinner(1);
       socket.emit('winner', email);
-    } else if (score1 < score2) {
+    }
+    if (props.score < score2) {
       setIsWinner(0);
       socket.emit('notwinner', email);
-    } else if (score1 === score2) {
+    }
+    if (props.score === score2) {
       setIsWinner(-1);
     }
-    flag = 1;
+    console.log(isWinner);
   }
 
-  return score2 !== 0 && isWinner !== 9 ? (
+  return score2 !== 0 ? (
     <ScrollView style={{backgroundColor: 'white'}}>
       <View style={{flex: 1, backgroundColor: '#fff'}}>
         <Text style={styles.title}>
@@ -103,7 +105,9 @@ function Result(props) {
             ? 'A Tie!'
             : isWinner == 1
             ? 'Congrats!'
-            : 'Next Time,'}
+            : isWinner == 0
+            ? 'Next Time,'
+            : ''}
         </Text>
         <Text style={styles.name}>{firstName}</Text>
         <Animatable.View animation="zoomIn" delay={500} duration={1500}>
@@ -114,7 +118,7 @@ function Result(props) {
           />
         </Animatable.View>
         <Text style={styles.ratio}>
-          {score1} : {score2}
+          {props.score} : {score2}
         </Text>
         <View style={styles.optionContainer}>
           <View style={styles.childContainer}>
@@ -208,10 +212,22 @@ const mapStateToProps = state => {
     score: state.quizReducer.score,
     socketid: state.topicState.socketid,
     opponentScore: state.quizReducer.opponentScore,
+    flag: state.topicState.flag,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setFlag: data => {
+      dispatch({
+        type: 'SET_FLAG_AGAIN',
+        flag: data,
+      });
+    },
   };
 };
 
 export default connect(
   mapStateToProps,
-  undefined,
+  mapDispatchToProps,
 )(Result);

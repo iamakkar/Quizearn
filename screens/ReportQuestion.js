@@ -25,7 +25,7 @@ export default function ReportQuestion({navigation}) {
       Alert.alert('First 3 fields are compulsary!');
       return;
     } else {
-      await fetch('https://6d78d89c5ce7.ngrok.io/reportquestion', {
+      await fetch('https://f2b638937c4b.ngrok.io/reportquestion', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',

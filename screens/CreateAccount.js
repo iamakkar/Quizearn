@@ -129,7 +129,7 @@ function CreateAccount(props) {
 
   //sending to database
   const sendCred = async () => {
-    fetch('https://6d78d89c5ce7.ngrok.io/signup', {
+    fetch('https://f2b638937c4b.ngrok.io/signup', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
