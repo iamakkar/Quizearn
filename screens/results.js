@@ -53,6 +53,7 @@ function Result(props) {
       score: props.score,
       socketid: props.socketid,
     });
+    console.log(props.flag);
     if (props.flag == true) {
       await compare();
     }
@@ -83,6 +84,8 @@ function Result(props) {
   });
 
   function compare() {
+    console.log(props.score);
+    console.log(score2);
     if (props.score > score2) {
       setIsWinner(1);
       socket.emit('winner', email);
@@ -97,7 +100,7 @@ function Result(props) {
     console.log(isWinner);
   }
 
-  return score2 !== 0 ? (
+  return score2 !== 0 && isWinner === 9 ? (
     <ScrollView style={{backgroundColor: 'white'}}>
       <View style={{flex: 1, backgroundColor: '#fff'}}>
         <Text style={styles.title}>
