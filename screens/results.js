@@ -44,6 +44,7 @@ function Result(props) {
 
   const [score2, setScore2] = useState(props.opponentScore); //kal yaha kaam karna hai
   const [isWinner, setIsWinner] = useState(9);
+  const [temp, setTemp] = useState(false);
 
   const [email, setEmail] = useState('');
   const [firstName, setfirstName] = useState('');
@@ -54,8 +55,9 @@ function Result(props) {
       socketid: props.socketid,
     });
     console.log(props.flag);
+    var email_value = await AsyncStorage.getItem('email');
     if (props.flag == true) {
-      await compare();
+      await compare1(email_value);
     }
   }, []);
 
@@ -80,27 +82,47 @@ function Result(props) {
     console.log('recieved the socket');
     console.log('Score is' + data);
     setScore2(data);
-    compare();
+    setTemp(true);
   });
 
-  function compare() {
+  async function compare() {
+    console.log(props.score);
+    console.log(score2);
+    if (temp == true) {
+      if (props.score > score2) {
+        await setIsWinner(1);
+        await socket.emit('winner', email);
+      }
+      if (props.score < score2) {
+        await setIsWinner(0);
+        await socket.emit('notwinner', email);
+      }
+      if (props.score === score2) {
+        await setIsWinner(-1);
+      }
+    }
+    setTemp(false);
+  }
+
+  async function compare1() {
     console.log(props.score);
     console.log(score2);
     if (props.score > score2) {
-      setIsWinner(1);
-      socket.emit('winner', email);
+      await setIsWinner(1);
+      await socket.emit('winner', email);
     }
     if (props.score < score2) {
-      setIsWinner(0);
-      socket.emit('notwinner', email);
+      await setIsWinner(0);
+      await socket.emit('notwinner', email);
     }
     if (props.score === score2) {
-      setIsWinner(-1);
+      await setIsWinner(-1);
     }
-    console.log(isWinner);
   }
 
-  return score2 !== 0 && isWinner === 9 ? (
+  compare();
+
+  return score2 !== 0 && isWinner !== 9 ? (
     <ScrollView style={{backgroundColor: 'white'}}>
       <View style={{flex: 1, backgroundColor: '#fff'}}>
         <Text style={styles.title}>
