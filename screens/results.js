@@ -104,16 +104,16 @@ function Result(props) {
     setTemp(false);
   }
 
-  async function compare1() {
+  async function compare1(recieved_email) {
     console.log(props.score);
     console.log(score2);
     if (props.score > score2) {
       await setIsWinner(1);
-      await socket.emit('winner', email);
+      await socket.emit('winner', recieved_email);
     }
     if (props.score < score2) {
       await setIsWinner(0);
-      await socket.emit('notwinner', email);
+      await socket.emit('notwinner', recieved_email);
     }
     if (props.score === score2) {
       await setIsWinner(-1);
