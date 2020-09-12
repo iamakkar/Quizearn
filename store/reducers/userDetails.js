@@ -8,7 +8,6 @@ const initialState = {
   mobNumber: '',
   coins: null,
   streak: null,
-  friends: [],
   isloggedin: false,
 };
 

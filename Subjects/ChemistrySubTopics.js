@@ -2,32 +2,20 @@ export const chemistrySubTopics = [
   {
     subtopic: 'The Periodic Table',
     topic: 'chemistry',
-    des: 'This is Algebra Guys!!',
+    des: 'Welcome!!',
     imageSource: require('../image_assets/maths.png'),
   },
   {
     subtopic: 'Carbon',
     topic: 'chemistry',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/maths.png'),
   },
   {
-    subtopic: 'Extraction',
+    subtopic: 'Physical',
     topic: 'chemistry',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
-  },
-  {
-    subtopic: 'Material Science and General Chemistry',
-    topic: 'chemistry',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
-  },
-  {
-    subtopic: 'Enviornmental',
-    topic: 'chemistry',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/maths.png'),
   },
   {
     subtopic: 'Random',

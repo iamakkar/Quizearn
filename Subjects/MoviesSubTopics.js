@@ -2,26 +2,14 @@ export const movieSubTopics = [
   {
     subtopic: 'Bollywood',
     topic: 'movies',
-    des: 'This is Algebra Guys!!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/Movies.png'),
   },
   {
     subtopic: 'Hollywood',
     topic: 'movies',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
-  },
-  {
-    subtopic: 'Series',
-    topic: 'movies',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
-  },
-  {
-    subtopic: 'Animes',
-    topic: 'movies',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/Movies.png'),
   },
   {
     subtopic: 'Random',

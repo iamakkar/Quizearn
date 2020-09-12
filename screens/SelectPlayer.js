@@ -15,6 +15,7 @@ import {Button} from 'react-native-paper';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {connect} from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
+import LoadingSearch from '../Loading_Screens/LoadSearch';
 
 const DEVICE_WIDTH = Dimensions.get('screen').width;
 const DEVICE_HEIGHT = Dimensions.get('window').width;
@@ -46,7 +47,7 @@ function App(props) {
 
   getEmail();
 
-  fetch(`https://f2b638937c4b.ngrok.io/display`, {
+  fetch(`http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/display`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -103,7 +104,11 @@ function App(props) {
               </View>
               <Image
                 style={styles.modalImage}
-                source={{uri: props.itemData.profilePicture}}
+                source={
+                  props.itemData.profilePicture === ''
+                    ? require('../image_assets/Unknown.png')
+                    : {uri: props.itemData.profilePicture}
+                }
               />
             </View>
             <View style={styles.modalDetailsView}>
@@ -144,7 +149,11 @@ function App(props) {
               <View style={styles.imageView}>
                 <Image
                   style={styles.itemImage}
-                  source={{uri: props.itemData.profilePicture}}
+                  source={
+                    props.itemData.profilePicture === ''
+                      ? require('../image_assets/Unknown.png')
+                      : {uri: props.itemData.profilePicture}
+                  }
                 />
               </View>
               <View style={styles.dataView}>
@@ -205,8 +214,16 @@ function App(props) {
         subtopic: st,
         bid: b,
       });
+      setSearch('');
+      setFilteredData([]);
+      proop();
       navigation.navigate('Quiz');
     }
+  }
+
+  async function proop() {
+    await props.setscoretozero();
+    await props.setalltozero(0);
   }
 
   props.setreduximurl(imurl);
@@ -225,10 +242,12 @@ function App(props) {
 
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState([]);
+  const [flag, setFlag] = useState(false);
 
   function handleSearch(text) {
+    setFlag(true);
     setSearch(text);
-    fetch(`https://f2b638937c4b.ngrok.io/finduser`, {
+    fetch(`http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/finduser`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -240,7 +259,11 @@ function App(props) {
     })
       .then(res => res.json())
       .then(async data => {
-        await setFilteredData(data);
+        let checkedData = await data.filter(player => {
+          return player.email != getemail; //Just replace test email with the stored user email here
+        });
+        setFilteredData(checkedData);
+        setFlag(false);
       });
   }
 
@@ -252,12 +275,16 @@ function App(props) {
         value={search}
         round={true}
       />
-      <FlatList
-        style={styles.itemList}
-        data={filteredData}
-        renderItem={renderItem}
-        keyExtractor={(item, itemIndex) => itemIndex.toString()}
-      />
+      {flag == true ? (
+        <LoadingSearch />
+      ) : (
+        <FlatList
+          style={styles.itemList}
+          data={filteredData}
+          renderItem={renderItem}
+          keyExtractor={(item, itemIndex) => itemIndex.toString()}
+        />
+      )}
     </View>
   );
 }
@@ -354,6 +381,17 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: 'SET_OSOCKETID',
         socketid: data,
+      });
+    },
+    setscoretozero: () => {
+      dispatch({
+        type: 'RESET_SCORES',
+      });
+    },
+    setalltozero: data => {
+      dispatch({
+        type: 'SET_INDEX_TO_ZERO',
+        index: data,
       });
     },
   };

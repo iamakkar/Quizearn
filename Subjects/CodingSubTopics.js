@@ -1,39 +1,21 @@
 export const codeSubTopics = [
   {
-    subtopic: 'Machine Learning',
+    subtopic: 'Object Oriented',
     topic: 'coding',
-    des: 'This is Algebra Guys!!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/coding.png'),
   },
   {
-    subtopic: 'Python',
+    subtopic: 'Data Structures and Algorithms',
     topic: 'coding',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/coding.png'),
   },
   {
-    subtopic: 'C',
+    subtopic: 'Problem Solving',
     topic: 'coding',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
-  },
-  {
-    subtopic: 'Java/C++',
-    topic: 'coding',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
-  },
-  {
-    subtopic: 'DSA',
-    topic: 'coding',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
-  },
-  {
-    subtopic: 'JavaScript/HTML/CSS',
-    topic: 'coding',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/coding.png'),
   },
   {
     subtopic: 'Random',

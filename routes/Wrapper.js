@@ -4,15 +4,19 @@ import DrawerNavigator from './drawer';
 import LoginStack from './logInStack';
 import {View} from 'react-native-animatable';
 import AsyncStorage from '@react-native-community/async-storage';
+import Loading from '../Loading_Screens/LoadingApp';
 
 function Wrapper(props) {
+  const [flag, setFlag] = useState(false);
+
   const detectLogin = async () => {
     const token = await AsyncStorage.getItem('token');
     if (token) {
-      props.setLoggedInStatus(true);
+      await props.setLoggedInStatus(true);
     } else {
-      props.setLoggedInStatus(false);
+      await props.setLoggedInStatus(false);
     }
+    setFlag(true);
   };
   useEffect(() => {
     detectLogin();
@@ -20,7 +24,13 @@ function Wrapper(props) {
 
   return (
     <View style={{width: '100%', height: '100%'}}>
-      {props.isloggedin === true ? <DrawerNavigator /> : <LoginStack />}
+      {flag === false ? (
+        <Loading />
+      ) : props.isloggedin === true ? (
+        <DrawerNavigator />
+      ) : (
+        <LoginStack />
+      )}
     </View>
   );
 }

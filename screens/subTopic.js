@@ -35,7 +35,6 @@ function SubTopic(props) {
         style={{
           height: '20%',
           justifyContent: 'center',
-          alignItems: 'center',
           borderTopLeftRadius: 60,
           borderTopRightRadius: 60,
         }}>
@@ -44,6 +43,7 @@ function SubTopic(props) {
             color: 'black',
             fontWeight: 'bold',
             fontSize: 40,
+            textAlign: 'center',
           }}>
           {props.subtopic}
         </Text>

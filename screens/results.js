@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {connect} from 'react-redux';
-import {LoadScreen} from './LoadResults';
+import {LoadScreen} from '../Loading_Screens/LoadResults';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import {socket} from '../routes/socket';
@@ -20,7 +20,7 @@ const DEVICE_WIDTH = Dimensions.get('window').width;
 const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 const ShareMessage =
-  'I am feeling great today!\n\nNow let me see what it takes to beat you...\n\nlets have a match: https://reactnative.dev/docs/share#sharedaction';
+  'I am feeling great today!\n\nNow let me see what it takes to beat you...\n\nlets have a match: https://makkardeepansh.wixsite.com/quizearn';
 
 const onShare = async () => {
   try {
@@ -42,21 +42,49 @@ const onShare = async () => {
 function Result(props) {
   let navigation = props.navigation;
 
-  const [score2, setScore2] = useState(props.opponentScore); //kal yaha kaam karna hai
-  const [isWinner, setIsWinner] = useState(9);
+  const [score2, setScore2] = useState(props.opponentScore); //props.opponentScore
+  const [isWinner, setIsWinner] = useState(9); //9
+  const [temp, setTemp] = useState(false);
 
   const [email, setEmail] = useState('');
   const [firstName, setfirstName] = useState('');
 
-  useEffect(async () => {
+  useEffect(() => {
+    cleanup();
+  }, []);
+
+  useEffect(() => {
+    compare();
+  }, [temp]);
+
+  async function cleanup() {
+    props.setIndexToZero(0);
     socket.emit('sendmyscore', {
       score: props.score,
       socketid: props.socketid,
     });
+    console.log(props.flag);
+    var email_value = await AsyncStorage.getItem('email');
     if (props.flag == true) {
-      await compare();
+      await compare1(email_value);
     }
-  }, []);
+  }
+
+  async function compare() {
+    if (temp == true) {
+      if (props.score > score2) {
+        await setIsWinner(1);
+        await socket.emit('winner', email);
+      }
+      if (props.score < score2) {
+        await setIsWinner(0);
+        await socket.emit('notwinner', email);
+      }
+      if (props.score === score2) {
+        await setIsWinner(-1);
+      }
+    }
+  }
 
   const get = async () => {
     try {
@@ -79,25 +107,26 @@ function Result(props) {
     console.log('recieved the socket');
     console.log('Score is' + data);
     setScore2(data);
-    compare();
+    setTemp(true);
   });
 
-  function compare() {
+  async function compare1(recieved_email) {
+    console.log(props.score);
+    console.log(score2);
     if (props.score > score2) {
-      setIsWinner(1);
-      socket.emit('winner', email);
+      await setIsWinner(1);
+      await socket.emit('winner', recieved_email);
     }
     if (props.score < score2) {
-      setIsWinner(0);
-      socket.emit('notwinner', email);
+      await setIsWinner(0);
+      await socket.emit('notwinner', recieved_email);
     }
     if (props.score === score2) {
-      setIsWinner(-1);
+      await setIsWinner(-1);
     }
-    console.log(isWinner);
   }
 
-  return score2 !== 0 ? (
+  return score2 !== 0 && isWinner !== 9 ? (
     <ScrollView style={{backgroundColor: 'white'}}>
       <View style={{flex: 1, backgroundColor: '#fff'}}>
         <Text style={styles.title}>
@@ -112,7 +141,11 @@ function Result(props) {
         <Text style={styles.name}>{firstName}</Text>
         <Animatable.View animation="zoomIn" delay={500} duration={1500}>
           <Image
-            source={require('../image_assets/trophy.png')}
+            source={
+              isWinner == 1
+                ? require('../image_assets/trophy.png')
+                : require('../image_assets/medal.png')
+            }
             style={styles.image}
             resizeMode={'contain'}
           />
@@ -122,24 +155,18 @@ function Result(props) {
         </Text>
         <View style={styles.optionContainer}>
           <View style={styles.childContainer}>
-            <TouchableOpacity>
-              <View style={{...styles.option, backgroundColor: '#00F5D4'}}>
-                <Text style={styles.optionText}>Rematch?</Text>
-              </View>
-            </TouchableOpacity>
             <TouchableOpacity onPress={onShare}>
-              <View style={{...styles.option, backgroundColor: '#00BBF9'}}>
+              <View style={{...styles.option, backgroundColor: '#FEE440'}}>
                 <Text style={styles.optionText}>Share</Text>
               </View>
             </TouchableOpacity>
           </View>
           <View style={styles.childContainer}>
-            <TouchableOpacity>
-              <View style={{...styles.option, backgroundColor: '#FEE440'}}>
-                <Text style={styles.optionText}>Details</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity
+              onPress={() => {
+                props.setFlag(false);
+                navigation.navigate('Home');
+              }}>
               <View style={{...styles.option, backgroundColor: '#9B5DE5'}}>
                 <Text style={styles.optionText}>Home</Text>
               </View>
@@ -193,14 +220,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   option: {
-    width: 0.4 * DEVICE_WIDTH,
+    width: 0.8 * DEVICE_WIDTH,
     height: 0.08 * DEVICE_HEIGHT,
     justifyContent: 'center',
-    alignItems: 'center',
     borderRadius: 10,
   },
   optionText: {
     paddingVertical: 15,
+    textAlign: 'center',
     color: 'white',
     fontWeight: 'bold',
     fontSize: 20,
@@ -221,6 +248,18 @@ const mapDispatchToProps = dispatch => {
     setFlag: data => {
       dispatch({
         type: 'SET_FLAG_AGAIN',
+        flag: data,
+      });
+    },
+    setIndexToZero: data => {
+      dispatch({
+        type: 'SET_INDEX_TO_ZERO',
+        index: data,
+      });
+    },
+    setFlag: data => {
+      dispatch({
+        type: 'SET_FLAG_FALSE',
         flag: data,
       });
     },

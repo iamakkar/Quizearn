@@ -6,10 +6,6 @@ import SignOut from '../screens/LoginScreen';
 import UpdateProfile from '../screens/UpdateProfile';
 import CreateAccount from '../screens/CreateAccount';
 
-import DrawerContent from '../routes/drawerContent';
-
-console.log(DrawerContent);
-
 const Stack = createStackNavigator();
 
 export default function LoginStack() {
@@ -26,12 +22,6 @@ export default function LoginStack() {
           component={UpdateProfile}
           options={{headerShown: false}}
         />
-        {/* <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{headerShown: false}}
-        /> */}
-
         <Stack.Screen name="Create an Account" component={CreateAccount} />
       </Stack.Navigator>
     </NavigationContainer>

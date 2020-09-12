@@ -1,13 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Text,
   StyleSheet,
   View,
   TextInput,
-  ImageBackground,
   TouchableOpacity,
-  Platform,
-  KeyboardAvoidingView,
   Dimensions,
   Image,
   ScrollView,
@@ -17,12 +14,15 @@ import {SocialIcon} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage';
 import {connect} from 'react-redux';
+import Loading from '../Loading_Screens/LoadingApp';
 
 const DEVICE_HEIGHT = Dimensions.get('window').height;
 const DEVICE_WIDTH = Dimensions.get('window').width;
 
 function CreateAccount(props) {
   let navigation = props.navigation;
+
+  const [flag, setFlag] = useState(false);
   const [passwordHidden, setPasswordHidden] = useState(true);
   const [confirmPasswordHidden, setConfirmPasswordHidden] = useState(true);
   const [passwordIcon, setPasswordIcon] = useState('eye');
@@ -129,7 +129,8 @@ function CreateAccount(props) {
 
   //sending to database
   const sendCred = async () => {
-    fetch('https://f2b638937c4b.ngrok.io/signup', {
+    setFlag(true);
+    fetch('http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/signup', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -143,7 +144,7 @@ function CreateAccount(props) {
       .then(async data => {
         try {
           props.signup(details.email);
-          await AsyncStorage.setItem('token', data.token);
+          await AsyncStorage.setItem('signuptoken', data.token);
           navigation.navigate('Update Profile');
         } catch (e) {
           console.log('error', e);
@@ -152,7 +153,9 @@ function CreateAccount(props) {
       .catch(err => console.error(err));
   };
 
-  return (
+  return flag === true ? (
+    <Loading />
+  ) : (
     <ScrollView style={styles.screen}>
       <View style={styles.topImageContainer}>
         <Image
@@ -240,11 +243,13 @@ function CreateAccount(props) {
               marginTop: '10%',
             }}>
             <View style={styles.line} />
-            <Text style={styles.or}>OR</Text>
+            <Text style={styles.india}>Made with</Text>
+            <FontAwesome5 name="heart" size={20} solid color="red" />
+            <Text style={styles.india}>in India</Text>
             <View style={styles.line} />
           </View>
         </View>
-        <View style={styles.textField}>
+        {/* <View style={styles.textField}>
           <TouchableOpacity style={styles.button}>
             <SocialIcon
               title="Sign Up With Facebook"
@@ -263,7 +268,7 @@ function CreateAccount(props) {
               style={styles.button}
             />
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   );
@@ -337,13 +342,14 @@ const styles = StyleSheet.create({
     letterSpacing: 3,
   },
   line: {
-    width: '40%',
+    width: '20%',
     borderWidth: 1,
     borderColor: 'white',
+    marginHorizontal: '2%',
     height: 0,
   },
-  or: {
-    marginHorizontal: '3%',
+  india: {
+    marginHorizontal: '1.5%',
     color: 'white',
     letterSpacing: 2,
   },

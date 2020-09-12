@@ -25,18 +25,21 @@ export default function ReportQuestion({navigation}) {
       Alert.alert('First 3 fields are compulsary!');
       return;
     } else {
-      await fetch('https://f2b638937c4b.ngrok.io/reportquestion', {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
+      await fetch(
+        'http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/reportquestion',
+        {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            topic: Topic,
+            subtopic: Subtopic,
+            question: Question,
+            description: Description,
+          }),
         },
-        body: JSON.stringify({
-          topic: Topic,
-          subtopic: Subtopic,
-          question: Question,
-          description: Description,
-        }),
-      })
+      )
         .then(ToastAndroid.show('Report Sent Succesfully!', ToastAndroid.SHORT))
         .then(setTopic(''))
         .then(setSubtopic(''))

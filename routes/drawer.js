@@ -14,6 +14,7 @@ import Result from '../screens/results';
 import LogInStack from '../routes/logInStack';
 import subTopic from '../screens/subTopic';
 import MakeBid from '../screens/MakeBid';
+import AboutUs from '../screens/Aboutus';
 import ReportQuestion from '../screens/ReportQuestion';
 import Shop from '../screens/Shop';
 import EditProfilePage from '../screens/EditProfile';
@@ -38,9 +39,21 @@ export default function drawer(props) {
           component={Home}
           options={{drawerIcon: ({focused, size}) => h}}
         />
-        <Drawer.Screen name="Quiz" component={Quiz} />
-        <Drawer.Screen name="Result" component={Result} />
-        <Drawer.Screen name="Circular Timer" component={CircularTimer} />
+        <Drawer.Screen
+          name="Quiz"
+          component={Quiz}
+          options={{unmountOnBlur: true}}
+        />
+        <Drawer.Screen
+          name="Result"
+          component={Result}
+          options={{unmountOnBlur: true}}
+        />
+        <Drawer.Screen
+          name="Circular Timer"
+          component={CircularTimer}
+          options={{unmountOnBlur: true}}
+        />
         <Drawer.Screen
           name="Report a Bug?"
           component={ReportBug}
@@ -55,9 +68,18 @@ export default function drawer(props) {
         <Drawer.Screen name="Edit Profile" component={EditProfilePage} />
         <Drawer.Screen name="Sign Out" component={LogInStack} />
         <Drawer.Screen name="sanchit" component={subTopic} />
-        <Drawer.Screen name="Make Bid" component={MakeBid} />
-        <Drawer.Screen name="Select Player" component={SelectPlayer} />
+        <Drawer.Screen
+          name="Make Bid"
+          component={MakeBid}
+          options={{unmountOnBlur: true}}
+        />
+        <Drawer.Screen
+          name="Select Player"
+          component={SelectPlayer}
+          options={{unmountOnBlur: true}}
+        />
         <Drawer.Screen name="Get Coins" component={GetCoins} />
+        <Drawer.Screen name="About Us" component={AboutUs} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

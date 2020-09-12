@@ -58,14 +58,17 @@ function EditProfilePage(props) {
           type: response.type,
           name: response.fileName,
         });
-        fetch('https://f2b638937c4b.ngrok.io/uploadimage', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'multipart/form-data',
+        fetch(
+          'http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/uploadimage',
+          {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'multipart/form-data',
+            },
+            body: data,
           },
-          body: data,
-        })
+        )
           .then(res => res.json())
           .then(async abc => {
             await setimurl(abc.location);
@@ -112,7 +115,7 @@ function EditProfilePage(props) {
     let fullDate = '';
     fullDate = day + '/' + month + '/' + year;
     hideDatePicker();
-    setDate(fullDate);
+    setdob(fullDate);
   };
 
   function hideDatePicker() {
@@ -141,21 +144,24 @@ function EditProfilePage(props) {
   }
 
   const sendCred = async () => {
-    fetch('https://f2b638937c4b.ngrok.io/enterUserDetails', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
+    fetch(
+      'http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/enterUserDetails',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          username: username,
+          dob: dob,
+          mobNumber: mobNumber,
+          email: email,
+          profilePicture: imurl,
+        }),
       },
-      body: JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
-        username: username,
-        dob: dob,
-        mobNumber: mobNumber,
-        email: email,
-        profilePicture: imurl,
-      }),
-    }).then(navigation.navigate('Home'));
+    ).then(navigation.navigate('Home'));
   };
 
   return (
@@ -256,15 +262,7 @@ function EditProfilePage(props) {
             style={styles.button}
             width={buttonWidth}
             height={buttonHeight}
-            onPress={update}>
-            <FontAwesome5 name="lock" size={15} />
-            Change Password
-          </Button>
-          <Button
-            mode="contained"
-            style={styles.button}
-            width={buttonWidth}
-            height={buttonHeight}
+            onPress={update}
             color="green">
             <FontAwesome5 name="edit" size={15} />
             Edit and Save

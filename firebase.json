@@ -1,5 +1,6 @@
 {
   "react-native": {
-    "admob_android_app_id": "ca-app-pub-5441323645351640~4717067143"
+    "admob_android_app_id": "ca-app-pub-5441323645351640~4717067143",
+    "admob_ios_app_id": "ca-app-pub-5441323645351640~2306352182"
   }
 }

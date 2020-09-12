@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {
-  Image,
+  ActivityIndicator,
   View,
   Share,
   Dimensions,
   TouchableWithoutFeedback,
+  Text,
 } from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {Icon, Avatar} from 'react-native-elements';
@@ -19,18 +20,30 @@ const iconSize = 20;
 const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 const shareMessage =
-  'Hey There! Download Quizearn and play exciting Quizes to earn money!!\nDo share the referal code with me to earn some free coins! \n\nhttps://reactnative.dev/docs/share#sharedaction';
+  'Hey There! Download Quizearn and play exciting Quizes to earn money!!\nDo share the referal code with me to earn some free coins! \n\nhttps://makkardeepansh.wixsite.com/quizearn';
 
+//SETTING UP ICONS//
 const so = <Icon reverse name="login" size={iconSize} />;
 const h = <Icon reverse name="home" size={iconSize} />;
 const rb = <Icon reverse name="error" size={iconSize} />;
 const rq = <Icon reverse name="warning" size={iconSize} />;
 const s = <Icon reverse name="share" size={iconSize} />;
-const sh = <Icon reverse name="shop" size={iconSize} />;
 const ep = <Icon reverse name="person" size={iconSize} />;
 const bc = (
   <FontAwesome5 name="coins" size={40} style={{padding: 9}} color={'gold'} />
 );
+const bg = (
+  <FontAwesome5 name="bug" size={40} style={{padding: 9}} color={'black'} />
+);
+const sh = (
+  <FontAwesome5
+    name="shopping-cart"
+    size={35}
+    style={{padding: 9}}
+    color={'black'}
+  />
+);
+//SETTING UP ICONS//
 
 const onShare = async props => {
   try {
@@ -53,6 +66,7 @@ const onShare = async props => {
 };
 
 function DrawerContent(props) {
+  const [flag, setFlag] = useState(false);
   const [getemail, setgetemail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -78,7 +92,7 @@ function DrawerContent(props) {
 
   getEmail();
 
-  fetch(`https://f2b638937c4b.ngrok.io/display`, {
+  fetch(`http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/display`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -99,6 +113,7 @@ function DrawerContent(props) {
         setMobNumber(data.mobNumber);
         setdob(data.dob);
         setimurl(data.profilePicture);
+        setFlag(true);
       } catch (e) {
         console.log('error is' + e);
       }
@@ -126,126 +141,158 @@ function DrawerContent(props) {
 
   return (
     <View style={{flex: 1}}>
-      <DrawerContentScrollView {...props}>
-        <View style={{paddingLeft: 20, height: 0.21 * DEVICE_HEIGHT}}>
-          <TouchableWithoutFeedback
-            onPress={() => props.navigation.navigate('Edit Profile')}>
-            <View style={{flexDirection: 'row', marginTop: 5}}>
-              <Avatar
-                rounded
-                source={
-                  imurl === ''
-                    ? require('../image_assets/Unknown.png')
-                    : {uri: imurl}
-                }
-                showAccessory={true}
-                size={80}
-              />
-              <View style={{marginLeft: 15, flexDirection: 'column'}}>
-                <Title
-                  style={{fontSize: 16, marginTop: 15, fontWeight: 'bold'}}>
-                  {firstName}
-                  {'\t'} {lastName}
-                </Title>
-                <Caption style={{fontSize: 14, lineHeight: 14}}>
-                  @{userName}
-                </Caption>
+      <View style={{paddingLeft: 20, height: 0.21 * DEVICE_HEIGHT}}>
+        <View>
+          {flag == true ? (
+            <TouchableWithoutFeedback
+              onPress={() => props.navigation.navigate('Edit Profile')}>
+              <View style={{flexDirection: 'row', marginTop: 5}}>
+                <Avatar
+                  rounded
+                  source={
+                    imurl === ''
+                      ? require('../image_assets/Unknown.png')
+                      : {uri: imurl}
+                  }
+                  showAccessory={true}
+                  size={80}
+                />
+                <View style={{marginLeft: 15, flexDirection: 'column'}}>
+                  <Title
+                    style={{fontSize: 16, marginTop: 15, fontWeight: 'bold'}}>
+                    {firstName}
+                    {` `}
+                    {lastName}
+                  </Title>
+                  <Caption style={{fontSize: 14, lineHeight: 14}}>
+                    @{userName}
+                  </Caption>
+                </View>
               </View>
-            </View>
-          </TouchableWithoutFeedback>
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
-            <View
+            </TouchableWithoutFeedback>
+          ) : (
+            <ActivityIndicator size="large" />
+          )}
+        </View>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <View
+            style={{
+              marginTop: 5,
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <FontAwesome5
+              name="coins"
+              size={20}
+              style={{paddingRight: 5}}
+              color={'gold'}
+            />
+            <Paragraph
               style={{
-                marginTop: 5,
-                flexDirection: 'row',
-                alignItems: 'center',
+                fontWeight: 'bold',
+                marginRight: 10,
+                fontSize: 20,
               }}>
-              <FontAwesome5
-                name="coins"
-                size={20}
-                style={{paddingRight: 5}}
-                color={'gold'}
-              />
-              <Paragraph
-                style={{
-                  fontWeight: 'bold',
-                  marginRight: 10,
-                  fontSize: 20,
-                }}>
-                {coins}
-              </Paragraph>
-              <FontAwesome5
-                name="fire"
-                size={20}
-                style={{paddingRight: 5}}
-                color={'orange'}
-              />
-              <Paragraph
-                style={{
-                  fontWeight: 'bold',
-                  marginRight: 3,
-                  fontSize: 20,
-                }}>
-                {streak}
-              </Paragraph>
-            </View>
+              {coins}
+            </Paragraph>
+            <FontAwesome5
+              name="fire"
+              size={20}
+              style={{paddingRight: 5}}
+              color={'orange'}
+            />
+            <Paragraph
+              style={{
+                fontWeight: 'bold',
+                marginRight: 3,
+                fontSize: 20,
+              }}>
+              {streak}
+            </Paragraph>
           </View>
         </View>
+      </View>
 
-        {/* userInformation ends */}
-        <Drawer.Section style={{borderTopColor: '#ddd', borderTopWidth: 2}}>
+      {/* userInformation ends */}
+      <DrawerContentScrollView {...props} showsVerticalScrollIndicator={false}>
+        <Drawer.Section
+          style={{
+            borderTopColor: '#ddd',
+            borderTopWidth: 2,
+          }}>
           <DrawerItem
             icon={({color, size}) => h}
-            label="Home"
+            label={() => (
+              <Text style={{fontFamily: 'Poppins-SemiBold', color: '#4a4a4d'}}>
+                Home
+              </Text>
+            )}
             onPress={() => {
               props.navigation.navigate('Home');
             }}
           />
           <DrawerItem
             icon={({color, size}) => bc}
-            label="Buy Coins"
+            label={() => (
+              <Text style={{fontFamily: 'Poppins-SemiBold', color: '#4a4a4d'}}>
+                Get Coins
+              </Text>
+            )}
             onPress={() => {
               props.navigation.navigate('Get Coins');
             }}
           />
           <DrawerItem
             icon={({color, size}) => sh}
-            label="Shop"
+            label={() => (
+              <Text style={{fontFamily: 'Poppins-SemiBold', color: '#4a4a4d'}}>
+                Shop
+              </Text>
+            )}
             onPress={() => {
               props.navigation.navigate('Shop');
             }}
           />
           <DrawerItem
             icon={({color, size}) => s}
-            label="Share"
+            label={() => (
+              <Text style={{fontFamily: 'Poppins-SemiBold', color: '#4a4a4d'}}>
+                Share
+              </Text>
+            )}
             onPress={onShare}
           />
 
           <DrawerItem
             icon={({color, size}) => ep}
-            label="Edit Profile"
+            label={() => (
+              <Text style={{fontFamily: 'Poppins-SemiBold', color: '#4a4a4d'}}>
+                Edit Profile
+              </Text>
+            )}
             onPress={() => props.navigation.navigate('Edit Profile')}
           />
 
           <DrawerItem
             icon={({color, size}) => rq}
-            label="Report a Question?"
+            label={() => (
+              <Text style={{fontFamily: 'Poppins-SemiBold', color: '#4a4a4d'}}>
+                Report a Question
+              </Text>
+            )}
             onPress={() => {
               props.navigation.navigate('Report a Question?');
             }}
           />
           <DrawerItem
-            icon={({color, size}) => rb}
-            label="Report a Bug?"
+            icon={({color, size}) => bg}
+            label={() => (
+              <Text style={{fontFamily: 'Poppins-SemiBold', color: '#4a4a4d'}}>
+                Report a Bug
+              </Text>
+            )}
             onPress={() => {
               props.navigation.navigate('Report a Bug?');
-            }}
-          />
-          <DrawerItem
-            icon={({color, size}) => h}
-            label="Test"
-            onPress={() => {
-              props.navigation.navigate('Quiz');
             }}
           />
         </Drawer.Section>
@@ -255,6 +302,11 @@ function DrawerContent(props) {
           borderTopColor: '#ddd',
           borderTopWidth: 2,
         }}>
+        <Drawer.Item
+          icon={'teamviewer'}
+          label="About Us"
+          onPress={() => props.navigation.navigate('About Us')}
+        />
         <Drawer.Item
           icon={'logout'}
           label="Sign Out"

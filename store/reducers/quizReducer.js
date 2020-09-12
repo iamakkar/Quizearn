@@ -10,6 +10,7 @@ var initState = {
   optionsEnabled: false,
   userCorrect: false,
   timerValue: 9,
+  questionSet: [],
 };
 
 const rootReducer = (state = initState, action) => {
@@ -78,10 +79,31 @@ const rootReducer = (state = initState, action) => {
     };
   }
 
+  if (action.type == 'SET_INDEX_TO_ZERO') {
+    return {
+      ...state,
+      currentIndex: action.index,
+    };
+  }
+
+  if (action.type == 'SET_QUESTIONS') {
+    return {
+      ...state,
+      questionSet: action.questionSet,
+    };
+  }
+
+  if (action.type == 'RESET_SCORES') {
+    return {
+      ...state,
+      score: 0,
+      opponentScore: 0,
+    };
+  }
+
   if (action.type == 'RESET_ALL') {
     return {
       ...state,
-      currentIndex: 0,
       hasAnswered: false,
       timeout: 2000,
       maxIndex: 4,
@@ -90,9 +112,9 @@ const rootReducer = (state = initState, action) => {
       optionsEnabled: false,
       userCorrect: false,
       timerValue: 9,
+      questionSet: [],
     };
   }
-  console.log(state);
 
   return state;
 };

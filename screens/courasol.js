@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, ScrollView, StyleSheet, Dimensions} from 'react-native';
+import {View, ScrollView, StyleSheet} from 'react-native';
 import SubTopic from '../screens/subTopic';
 
 export default function Courasol(props) {

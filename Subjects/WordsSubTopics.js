@@ -2,20 +2,20 @@ export const wordSubTopics = [
   {
     subtopic: 'Spell Bee',
     topic: 'words',
-    des: 'This is Algebra Guys!!',
-    imageSource: require('../image_assets/maths.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/words.png'),
   },
   {
     subtopic: 'Anagrams',
     topic: 'words',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/words.png'),
   },
   {
     subtopic: 'Jumbled Words',
     topic: 'words',
-    des: 'Any question from the topic can be asked!!\nHighly Recommended!',
-    imageSource: require('../image_assets/physics.png'),
+    des: 'Welcome!!',
+    imageSource: require('../image_assets/words.png'),
   },
   {
     subtopic: 'Random',

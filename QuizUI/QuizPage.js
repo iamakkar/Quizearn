@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   StyleSheet,
@@ -6,6 +6,8 @@ import {
   ScrollView,
   Animated,
   ToastAndroid,
+  BackHandler,
+  Alert,
 } from 'react-native';
 import {Avatar} from 'react-native-elements';
 import CircularTimer from './CircularTimer';
@@ -14,7 +16,7 @@ import ScoreTimer from './ScoreTimer';
 import GridOptionContainer from './ImageQuestion';
 import {connect} from 'react-redux';
 import * as Animatable from 'react-native-animatable';
-import {LoadScreen} from './LoadScreen';
+import {LoadScreen} from '../Loading_Screens/LoadScreen';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import {socket} from '../routes/socket';
@@ -24,8 +26,31 @@ const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 function QuizPage(props) {
   let navigation = props.navigation;
-  const [questionSet, setQuestionSet] = useState([]);
+
   const [getimurl, setgetimurl] = useState('');
+
+  //Back Behaviour
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert(
+        'Warning!',
+        'You can not leave a quiz in between, you will lose the bid',
+        [
+          {
+            text: 'Okay',
+            onPress: () => null,
+            style: 'cancel',
+          },
+        ],
+      );
+      return true;
+    };
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+    return () => backHandler.remove();
+  }, []);
 
   const get = async () => {
     try {
@@ -65,13 +90,9 @@ function QuizPage(props) {
   questionAnimation();
 
   function startRound() {
-    if (props.currentIndex > 4) {
-      setQuestionSet([]);
-    } else {
-      console.log('Round Started');
-      props.setAnswered(false);
-      props.setCorrect(false);
-    }
+    console.log('Round Started');
+    props.setAnswered(false);
+    props.setCorrect(false);
   }
 
   startRound();
@@ -88,14 +109,14 @@ function QuizPage(props) {
     props.setFlag(true);
     console.log('opponent has completed the quiz');
   });
-  //SOCKET CODE ENDS HERE
 
   socket.on('accepted', async ques => {
-    await setQuestionSet(ques);
+    await props.setQuestionSet(ques);
     await console.log(ques);
   });
+  //SOCKET CODE ENDS HERE
 
-  return questionSet.length != 5 ? (
+  return props.questionSet.length != 5 ? (
     <LoadScreen />
   ) : (
     <ScrollView style={styles.screen}>
@@ -128,7 +149,7 @@ function QuizPage(props) {
             delay={500}
             duration={1000}
             animation="fadeIn">
-            {questionSet[props.currentIndex].question}
+            {props.questionSet[props.currentIndex].question}
           </Animatable.Text>
         </View>
       </View>
@@ -140,22 +161,22 @@ function QuizPage(props) {
         />
       </View>
       <View style={{position: 'relative', top: -timerRadius / 2}}>
-        {questionSet[props.currentIndex].imageUrl != '' ? (
+        {props.questionSet[props.currentIndex].image != '' ? (
           <GridOptionContainer
-            imageSource={questionSet[props.currentIndex].image}
-            optionA={questionSet[props.currentIndex].option1}
-            optionB={questionSet[props.currentIndex].option2}
-            optionC={questionSet[props.currentIndex].option3}
-            optionD={questionSet[props.currentIndex].option4}
-            correctAnswer={questionSet[props.currentIndex].correctOption}
+            imageSource={props.questionSet[props.currentIndex].image}
+            optionA={props.questionSet[props.currentIndex].option1}
+            optionB={props.questionSet[props.currentIndex].option2}
+            optionC={props.questionSet[props.currentIndex].option3}
+            optionD={props.questionSet[props.currentIndex].option4}
+            correctAnswer={props.questionSet[props.currentIndex].correctOption}
           />
         ) : (
           <ListOptionContainer
-            optionA={questionSet[props.currentIndex].option1}
-            optionB={questionSet[props.currentIndex].option2}
-            optionC={questionSet[props.currentIndex].option3}
-            optionD={questionSet[props.currentIndex].option4}
-            correctAnswer={questionSet[props.currentIndex].correctOption}
+            optionA={props.questionSet[props.currentIndex].option1}
+            optionB={props.questionSet[props.currentIndex].option2}
+            optionC={props.questionSet[props.currentIndex].option3}
+            optionD={props.questionSet[props.currentIndex].option4}
+            correctAnswer={props.questionSet[props.currentIndex].correctOption}
           />
         )}
       </View>
@@ -225,6 +246,7 @@ const mapStateToProps = state => {
     currentIndex: state.quizReducer.currentIndex,
     maxIndex: state.quizReducer.maxIndex,
     reduximurl: state.topicState.reduximurl,
+    questionSet: state.quizReducer.questionSet,
   };
 };
 
@@ -246,6 +268,12 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: 'SET_FLAG',
         flag: data,
+      });
+    },
+    setQuestionSet: data => {
+      dispatch({
+        type: 'SET_QUESTIONS',
+        questionSet: data,
       });
     },
   };

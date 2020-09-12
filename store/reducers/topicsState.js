@@ -39,6 +39,12 @@ const topicState = (state = initialState, action) => {
       flag: action.flag,
     };
   }
+  if (action.type == 'SET_FLAG_FALSE') {
+    return {
+      ...state,
+      flag: action.flag,
+    };
+  }
   if (action.type == 'SET_FLAG_AGAIN') {
     return {
       ...state,

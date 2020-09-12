@@ -4,23 +4,6 @@
             "outputFile": "/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
             "map": [
                 {
-                    "source": "/Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/770dff501a405e6212e7afc2e4594c29/jetified-play-services-ads-19.2.0/res/values-km/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "199,271,399,464,528,621,746",
-                        "endColumns": "71,127,64,63,92,124,76",
-                        "endOffsets": "270,398,463,527,620,745,822"
-                    },
-                    "to": {
-                        "startLines": "47,48,49,50,51,52,53",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "5492,5568,5700,5769,5837,5934,6063",
-                        "endColumns": "75,131,68,67,96,128,80",
-                        "endOffsets": "5563,5695,5764,5832,5929,6058,6139"
-                    }
-                },
-                {
                     "source": "/Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/6816c8808a046deddd54b5071000bde3/jetified-play-services-basement-17.1.1/res/values-km/values.xml",
                     "from": {
                         "startLines": "4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2793,2897,3084,3207,3314,3535,3661,3812,4158,4375,4483,4685,4812,5016,5204,5298,5386",
                         "endColumns": "103,186,122,106,220,125,150,137,216,107,201,126,203,187,93,87,105",
                         "endOffsets": "2892,3079,3202,3309,3530,3656,3807,3945,4370,4478,4680,4807,5011,5199,5293,5381,5487"
+                    }
+                },
+                {
+                    "source": "/Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/fd9a0c9d8ee4bd27e12b9764c3e22555/jetified-play-services-ads-19.3.0/res/values-km/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "199,271,399,464,528,621,746",
+                        "endColumns": "71,127,64,63,92,124,76",
+                        "endOffsets": "270,398,463,527,620,745,822"
+                    },
+                    "to": {
+                        "startLines": "47,48,49,50,51,52,53",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "5492,5568,5700,5769,5837,5934,6063",
+                        "endColumns": "75,131,68,67,96,128,80",
+                        "endOffsets": "5563,5695,5764,5832,5929,6058,6139"
                     }
                 },
                 {

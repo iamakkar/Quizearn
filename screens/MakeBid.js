@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, StyleSheet, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Dimensions,
+  ActivityIndicator,
+} from 'react-native';
 import {Button} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -18,7 +25,8 @@ const bid3 = 1000;
 function BidScreen(props) {
   let navigation = props.navigation;
 
-  const [bid, setBid] = useState(bid1);
+  const [flag, setFlag] = useState(false);
+  const [bid, setBid] = useState(0);
   const [balance, setBalance] = useState(null);
   const [getemail, setgetemail] = useState('');
 
@@ -37,7 +45,7 @@ function BidScreen(props) {
 
   getEmail();
 
-  fetch(`https://f2b638937c4b.ngrok.io/display`, {
+  fetch(`http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/display`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -50,12 +58,16 @@ function BidScreen(props) {
     .then(res => res.json())
     .then(async data => {
       await setBalance(data.coins);
+      setFlag(true);
     });
 
   async function sendBid() {
     props.setReduxBid(bid);
-    const socket = await io('https://f2b638937c4b.ngrok.io');
+    const socket = await io(
+      'http://ec2-100-26-254-177.compute-1.amazonaws.com:3000',
+    );
     await socket.emit('setBid', bid);
+    setFlag(false);
     navigation.navigate('Select Player');
   }
 
@@ -63,7 +75,11 @@ function BidScreen(props) {
     <View style={styles.screen}>
       <View style={styles.topBar}>
         <Icon name="coins" size={20} solid color="gold" />
-        <Text style={styles.balanceView}>{balance}</Text>
+        {flag == true ? (
+          <Text style={styles.balanceView}>{balance}</Text>
+        ) : (
+          <ActivityIndicator size="small" />
+        )}
       </View>
       <View style={{alignItems: 'center'}}>
         <View style={styles.header}>
@@ -116,7 +132,8 @@ function BidScreen(props) {
         mode="contained"
         color="green"
         style={styles.submitButton}
-        onPress={sendBid}>
+        onPress={sendBid}
+        disabled={bid === 0 ? true : false}>
         <Text style={styles.buttonText}>Play</Text>
       </Button>
     </View>
@@ -165,6 +182,7 @@ const styles = StyleSheet.create({
     fontSize: 55,
     fontWeight: 'bold',
     color: 'yellow',
+    textAlign: 'center',
   },
   buttonText: {
     fontSize: 30,

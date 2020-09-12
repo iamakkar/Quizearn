@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Text,
   StyleSheet,
   View,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
   Dimensions,
   Image,
   ScrollView,
+  BackHandler,
+  Alert,
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {Avatar} from 'react-native-elements';
@@ -17,12 +18,15 @@ import LinearGradient from 'react-native-linear-gradient';
 import ImagePicker from 'react-native-image-picker';
 import AsyncStorage from '@react-native-community/async-storage';
 import {connect} from 'react-redux';
+import Loading from '../Loading_Screens/LoadingApp';
 
 const DEVICE_HEIGHT = Dimensions.get('window').height;
 const DEVICE_WIDTH = Dimensions.get('window').width;
 
 function CreateAccount(props) {
   let navigation = props.navigation;
+
+  const [flag, setFlag] = useState(false);
   const [isDatePickerVisible, setDatePickerVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
   const [imurl, setimurl] = useState('');
@@ -33,6 +37,25 @@ function CreateAccount(props) {
     username: '',
     mobNumber: '',
   });
+
+  //Back Behaviour
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert('Warning!', 'You have to complete the registration', [
+        {
+          text: 'Okay',
+          onPress: () => null,
+          style: 'cancel',
+        },
+      ]);
+      return true;
+    };
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+    return () => backHandler.remove();
+  }, []);
 
   //image picker
   var options = {
@@ -60,18 +83,23 @@ function CreateAccount(props) {
           type: response.type,
           name: response.fileName,
         });
-        fetch('https://f2b638937c4b.ngrok.io/uploadimage', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'multipart/form-data',
+        setFlag(true);
+        fetch(
+          'http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/uploadimage',
+          {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'multipart/form-data',
+            },
+            body: data,
           },
-          body: data,
-        })
+        )
           .then(res => res.json())
           .then(async abc => {
             await setimurl(abc.location);
             setAvatar(true);
+            setFlag(false);
           })
           .catch(err => console.log(err));
       }
@@ -122,21 +150,24 @@ function CreateAccount(props) {
 
   const sendCred = async () => {
     console.log('EMAIL' + props.email);
-    fetch('https://f2b638937c4b.ngrok.io/enterUserDetails', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
+    fetch(
+      'http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/enterUserDetails',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: details.firstName,
+          lastName: details.lastName,
+          username: details.username,
+          dob: details.dob,
+          mobNumber: details.mobNumber,
+          profilePicture: imurl,
+          email: props.email,
+        }),
       },
-      body: JSON.stringify({
-        firstName: details.firstName,
-        lastName: details.lastName,
-        username: details.username,
-        dob: details.dob,
-        mobNumber: details.mobNumber,
-        profilePicture: imurl,
-        email: props.email,
-      }),
-    }).then(navigation.navigate('Log In'));
+    ).then(navigation.navigate('Log In'));
   };
 
   return (
@@ -150,17 +181,21 @@ function CreateAccount(props) {
       <View style={styles.form}>
         <View style={styles.imageContainer}>
           <View style={styles.profileImage}>
-            <Avatar
-              rounded
-              source={
-                avatar === null
-                  ? require('../image_assets/Unknown.png')
-                  : {uri: imurl}
-              }
-              size={100}
-              showAccessory
-              onPress={openPicker}
-            />
+            {flag == true ? (
+              <Loading />
+            ) : (
+              <Avatar
+                rounded
+                source={
+                  avatar === null
+                    ? require('../image_assets/Unknown.png')
+                    : {uri: imurl}
+                }
+                size={100}
+                showAccessory
+                onPress={openPicker}
+              />
+            )}
           </View>
           <View style={styles.namesField}>
             <View style={styles.name}>

@@ -44,16 +44,19 @@ export default function reportBug({navigation}) {
       );
       return;
     } else {
-      await fetch('https://f2b638937c4b.ngrok.io/reportbug', {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
+      await fetch(
+        'http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/reportbug',
+        {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            title: titleField,
+            description: desField,
+          }),
         },
-        body: JSON.stringify({
-          title: titleField,
-          description: desField,
-        }),
-      })
+      )
         .then(ToastAndroid.show('Report Sent Succesfully!', ToastAndroid.SHORT))
         .then(setTitleField(''))
         .then(setDesField(''));

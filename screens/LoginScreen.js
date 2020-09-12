@@ -6,7 +6,6 @@ import {
   TextInput,
   ImageBackground,
   TouchableOpacity,
-  Platform,
   Dimensions,
   Alert,
 } from 'react-native';
@@ -17,29 +16,42 @@ import * as Animatable from 'react-native-animatable';
 import {ScrollView} from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
 import {connect} from 'react-redux';
+import Loading from '../Loading_Screens/LoadingApp';
 
-const deviceHeight = Dimensions.get('window').height;
+const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 function SignOutScreen(props) {
   let navigation = props.navigation;
+
+  const [flag, setFlag] = useState(false);
+  const [passwordHidden, setPasswordHidden] = useState(true);
+  const [passwordIcon, setPasswordIcon] = useState('eye');
   const [Details, setDetails] = useState({
     email: '',
     password: '',
   });
 
-  //Password Secure Entry
-  const updateSecureTextEntry = () => {
-    setDetails({
-      ...Details,
-      secureTextEntry: !Details.secureTextEntry,
-    });
-  };
+  //Secure Text Entry
+  function passwordShowHandler() {
+    setPasswordHidden(!passwordHidden);
+    if (passwordIcon == 'eye') {
+      setPasswordIcon('eye-slash');
+    } else {
+      setPasswordIcon('eye');
+    }
+  }
 
   //sending to database
   const sendCred = async () => {
     const ase = AsyncStorage.setItem('email', Details.email);
 
-    fetch('https://f2b638937c4b.ngrok.io/signin', {
+    if (Details.email == '' || Details.password == '') {
+      alert('You have to fill both the fields!');
+      return;
+    }
+
+    setFlag(true);
+    fetch('http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -54,6 +66,7 @@ function SignOutScreen(props) {
         try {
           await AsyncStorage.setItem('token', data.token);
           props.setLoggedInStatus(true);
+          setFlag(false);
         } catch (e) {
           console.log('error hai', e);
           Alert(e);
@@ -61,7 +74,9 @@ function SignOutScreen(props) {
       });
   };
 
-  return (
+  return flag === true ? (
+    <Loading />
+  ) : (
     <View style={styles.page}>
       <ImageBackground
         source={require('../image_assets/background.png')}
@@ -88,8 +103,9 @@ function SignOutScreen(props) {
                 style={styles.Input}
                 placeholder="E-Mail ID"
                 value={Details.email}
+                keyboardType="email-address"
                 onChangeText={text => {
-                  setDetails({...Details, email: text});
+                  setDetails({...Details, email: text.toLocaleLowerCase()});
                 }}
                 placeholderTextColor="#ddd"
               />
@@ -104,12 +120,12 @@ function SignOutScreen(props) {
                 onChangeText={text => {
                   setDetails({...Details, password: text});
                 }}
-                secureTextEntry={Details.secureTextEntry ? true : false}
+                secureTextEntry={passwordHidden}
               />
               <TouchableOpacity
-                onPress={updateSecureTextEntry}
+                onPress={passwordShowHandler}
                 style={{position: 'absolute', left: '90%'}}>
-                {Details.secureTextEntry ? (
+                {passwordHidden ? (
                   <FontAwesome5 name="eye" color="grey" size={20} />
                 ) : (
                   <FontAwesome5 name="eye-slash" color="grey" size={20} />
@@ -125,10 +141,10 @@ function SignOutScreen(props) {
                 <LinearGradient
                   colors={['#f89b29', '#ff0f7b']}
                   style={styles.button}>
-                  <Text style={styles.textsignin}>LOG IN</Text>
+                  <Text style={styles.textsignin}>LOGIN</Text>
                 </LinearGradient>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.button, {marginTop: '5%'}]}>
+              {/* <TouchableOpacity style={[styles.button, {marginTop: '5%'}]}>
                 <SocialIcon
                   title="Sign Up With Facebook"
                   button
@@ -143,7 +159,7 @@ function SignOutScreen(props) {
                   type="google"
                   style={styles.button}
                 />
-              </TouchableOpacity>
+              </TouchableOpacity> */}
               <TouchableOpacity
                 style={[styles.button, {marginTop: '5%'}]}
                 onPress={() => navigation.navigate('Create an Account')}>
@@ -167,7 +183,7 @@ const styles = StyleSheet.create({
   },
   greet: {
     color: '#fff',
-    fontSize: 80,
+    fontSize: 75,
     textAlign: 'center',
     marginTop: '25%',
     fontFamily: 'futura',
@@ -202,21 +218,21 @@ const styles = StyleSheet.create({
   bgImage: {
     width: '100%',
     height: '100%',
-    minHeight: deviceHeight,
+    minHeight: DEVICE_HEIGHT,
   },
   button: {
     width: '100%',
     height: 50,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     borderRadius: 50,
   },
   textsignin: {
     fontWeight: 'bold',
     fontSize: 20,
     color: 'white',
-    alignItems: 'center',
-    letterSpacing: 3,
+    textAlign: 'center',
+    letterSpacing: 2,
   },
   errorMsg: {
     color: '#FF0000',

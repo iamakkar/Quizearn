@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-const socket = io('https://f2b638937c4b.ngrok.io');
+const socket = io('http://ec2-100-26-254-177.compute-1.amazonaws.com:3000');
 
 module.exports = {
   socket,

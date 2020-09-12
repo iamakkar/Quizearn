@@ -745,40 +745,40 @@ public final class R {
         public static final int btn_radio_off_to_on_mtrl_animation = 0x7f070063;
         public static final int btn_radio_on_mtrl = 0x7f070064;
         public static final int btn_radio_on_to_off_mtrl_animation = 0x7f070065;
-        public static final int notification_action_background = 0x7f070096;
-        public static final int notification_bg = 0x7f070097;
-        public static final int notification_bg_low = 0x7f070098;
-        public static final int notification_bg_low_normal = 0x7f070099;
-        public static final int notification_bg_low_pressed = 0x7f07009a;
-        public static final int notification_bg_normal = 0x7f07009b;
-        public static final int notification_bg_normal_pressed = 0x7f07009c;
-        public static final int notification_icon_background = 0x7f07009d;
-        public static final int notification_template_icon_bg = 0x7f07009e;
-        public static final int notification_template_icon_low_bg = 0x7f07009f;
-        public static final int notification_tile_bg = 0x7f0700a0;
-        public static final int notify_panel_notification_icon_bg = 0x7f0700a1;
-        public static final int redbox_top_border_background = 0x7f0700a2;
-        public static final int tooltip_frame_dark = 0x7f0700a4;
-        public static final int tooltip_frame_light = 0x7f0700a5;
-        public static final int ucrop_crop = 0x7f0700a6;
-        public static final int ucrop_ic_angle = 0x7f0700a7;
-        public static final int ucrop_ic_crop = 0x7f0700a8;
-        public static final int ucrop_ic_crop_unselected = 0x7f0700a9;
-        public static final int ucrop_ic_cross = 0x7f0700aa;
-        public static final int ucrop_ic_done = 0x7f0700ab;
-        public static final int ucrop_ic_next = 0x7f0700ac;
-        public static final int ucrop_ic_reset = 0x7f0700ad;
-        public static final int ucrop_ic_rotate = 0x7f0700ae;
-        public static final int ucrop_ic_rotate_unselected = 0x7f0700af;
-        public static final int ucrop_ic_scale = 0x7f0700b0;
-        public static final int ucrop_ic_scale_unselected = 0x7f0700b1;
-        public static final int ucrop_rotate = 0x7f0700b2;
-        public static final int ucrop_scale = 0x7f0700b3;
-        public static final int ucrop_shadow_upside = 0x7f0700b4;
-        public static final int ucrop_vector_ic_crop = 0x7f0700b5;
-        public static final int ucrop_vector_loader = 0x7f0700b6;
-        public static final int ucrop_vector_loader_animated = 0x7f0700b7;
-        public static final int ucrop_wrapper_controls_shape = 0x7f0700b8;
+        public static final int notification_action_background = 0x7f070097;
+        public static final int notification_bg = 0x7f070098;
+        public static final int notification_bg_low = 0x7f070099;
+        public static final int notification_bg_low_normal = 0x7f07009a;
+        public static final int notification_bg_low_pressed = 0x7f07009b;
+        public static final int notification_bg_normal = 0x7f07009c;
+        public static final int notification_bg_normal_pressed = 0x7f07009d;
+        public static final int notification_icon_background = 0x7f07009e;
+        public static final int notification_template_icon_bg = 0x7f07009f;
+        public static final int notification_template_icon_low_bg = 0x7f0700a0;
+        public static final int notification_tile_bg = 0x7f0700a1;
+        public static final int notify_panel_notification_icon_bg = 0x7f0700a2;
+        public static final int redbox_top_border_background = 0x7f0700a3;
+        public static final int tooltip_frame_dark = 0x7f0700a5;
+        public static final int tooltip_frame_light = 0x7f0700a6;
+        public static final int ucrop_crop = 0x7f0700a7;
+        public static final int ucrop_ic_angle = 0x7f0700a8;
+        public static final int ucrop_ic_crop = 0x7f0700a9;
+        public static final int ucrop_ic_crop_unselected = 0x7f0700aa;
+        public static final int ucrop_ic_cross = 0x7f0700ab;
+        public static final int ucrop_ic_done = 0x7f0700ac;
+        public static final int ucrop_ic_next = 0x7f0700ad;
+        public static final int ucrop_ic_reset = 0x7f0700ae;
+        public static final int ucrop_ic_rotate = 0x7f0700af;
+        public static final int ucrop_ic_rotate_unselected = 0x7f0700b0;
+        public static final int ucrop_ic_scale = 0x7f0700b1;
+        public static final int ucrop_ic_scale_unselected = 0x7f0700b2;
+        public static final int ucrop_rotate = 0x7f0700b3;
+        public static final int ucrop_scale = 0x7f0700b4;
+        public static final int ucrop_shadow_upside = 0x7f0700b5;
+        public static final int ucrop_vector_ic_crop = 0x7f0700b6;
+        public static final int ucrop_vector_loader = 0x7f0700b7;
+        public static final int ucrop_vector_loader_animated = 0x7f0700b8;
+        public static final int ucrop_wrapper_controls_shape = 0x7f0700b9;
     }
     public static final class id {
         private id() {}
@@ -2126,7 +2126,7 @@ public final class R {
     public static final class xml {
         private xml() {}
 
-        public static final int provider_paths = 0x7f120001;
-        public static final int rn_dev_preferences = 0x7f120002;
+        public static final int provider_paths = 0x7f120002;
+        public static final int rn_dev_preferences = 0x7f120003;
     }
 }

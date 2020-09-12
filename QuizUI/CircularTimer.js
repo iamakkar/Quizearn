@@ -15,7 +15,6 @@ function CircularTimer(props) {
 
   const colorValue = useState(new Animated.Value(0))[0];
   var timeElapsed = useState(new Animated.Value(0))[0];
-  let stopValue;
 
   const offsetLength = timeElapsed.interpolate({
     inputRange: [0, 20],
@@ -79,7 +78,7 @@ function CircularTimer(props) {
           props.incrementIndex();
         } else {
           props.resetState();
-          navigation.navigate('Result');
+          navigation.navigate('Result'); //yaha pe quiz khatam
           console.log('Match Over!');
         }
       }, props.timeout);
@@ -154,9 +153,6 @@ const mapDispatchToProps = dispatch => {
     },
     setAnswered: boolVar => {
       dispatch({type: 'SET_ANSWERED', data: boolVar});
-    },
-    incrementScore: value => {
-      dispatch({type: 'INCREMENT_SCORE', data: value});
     },
     setOptions: boolValue => {
       dispatch({type: 'SET_OPTIONS', data: boolValue});

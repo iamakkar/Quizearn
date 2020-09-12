@@ -21,7 +21,6 @@ import chemistrySubTopics from '../Subjects/ChemistrySubTopics';
 import codingSubTopics from '../Subjects/CodingSubTopics';
 import gkSubTopics from '../Subjects/GKSubTopics';
 import movieSubTopics from '../Subjects/MoviesSubTopics';
-import techSubTopics from '../Subjects/TechSubTopics';
 import wordsSubTopics from '../Subjects/WordsSubTopics';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
@@ -38,13 +37,14 @@ function Home(props) {
   const [chemistryModalVisible, setChemistryModalVisible] = useState(false);
   const [codingModalVisible, setCodingModalVisible] = useState(false);
   const [GKModalVisible, setGKModalVisible] = useState(false);
-  const [techModalVisible, setTechModalVisible] = useState(false);
   const [moviesModalVisible, setMoviesModalVisible] = useState(false);
   const [wordsModalVisible, setWordsModalVisible] = useState(false);
 
   const [email, setgetemail] = useState('');
 
   useEffect(() => {
+    getEmail();
+    console.log(email);
     const backAction = () => {
       Alert.alert('What?!', 'Are you sure you want to EXIT the app?', [
         {
@@ -63,11 +63,25 @@ function Home(props) {
     );
 
     return () => backHandler.remove();
-  }, []);
+  }, [email]);
 
-  function Disconnect() {
-    socket.emit('disconnect', email);
-    BackHandler.exitApp();
+  async function Disconnect() {
+    console.log(email);
+    await fetch(
+      'http://ec2-100-26-254-177.compute-1.amazonaws.com:3000/exitapp',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+        }),
+      },
+    )
+      .then(res => res.json())
+      .then(console.log('request is done '))
+      .then(BackHandler.exitApp());
   }
   const [socketdata, setSocketdata] = useState([]);
   const [reqmodalvisible, setreqmodalvisible] = useState(false);
@@ -91,6 +105,8 @@ function Home(props) {
   }
 
   function Accepted() {
+    props.setscoretozero();
+    props.setalltozero(0);
     socket.emit('accepted', {
       topic: socketdata.topic,
       subtopic: socketdata.subtopic,
@@ -99,6 +115,7 @@ function Home(props) {
     });
     props.setosocketid(socketdata.mysocketid);
     setreqmodalvisible(!reqmodalvisible);
+
     navigation.navigate('Quiz');
   }
 
@@ -109,6 +126,7 @@ function Home(props) {
       if (jsonValue !== null) {
         // We have data!!
         setgetemail(jsonValue);
+        console.log(email);
       }
     } catch (e) {
       console.log(e + 'badbadbabd');
@@ -227,22 +245,7 @@ function Home(props) {
           <Courasol items={gkSubTopics} />
         </View>
       </Modal>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={techModalVisible}
-        onRequestClose={() => setTechModalVisible(!techModalVisible)}
-        onDismiss={() => setTechModalVisible(!techModalVisible)}>
-        <View style={styles.modal}>
-          <IconButton
-            icon="close"
-            size={40}
-            style={styles.icon}
-            onPress={() => setTechModalVisible(!techModalVisible)}
-          />
-          <Courasol items={techSubTopics} />
-        </View>
-      </Modal>
+
       <Modal
         animationType="slide"
         transparent={true}
@@ -378,22 +381,6 @@ function Home(props) {
             elevation={10}
             style={styles.card}
             onPress={() => {
-              setTechModalVisible(!techModalVisible);
-            }}>
-            <Card.Content>
-              <Title style={styles.cardtitle}>Tech</Title>
-              <Card.Cover
-                resizeMode={'contain'}
-                source={require('../image_assets/tech.png')}
-                style={{borderRadius: 5}}
-              />
-            </Card.Content>
-          </Card>
-
-          <Card
-            elevation={10}
-            style={styles.card}
-            onPress={() => {
               setGKModalVisible(!GKModalVisible);
             }}>
             <Card.Content>
@@ -518,6 +505,17 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: 'SET_OSOCKETID',
         socketid: data,
+      });
+    },
+    setscoretozero: () => {
+      dispatch({
+        type: 'RESET_SCORES',
+      });
+    },
+    setalltozero: data => {
+      dispatch({
+        type: 'SET_INDEX_TO_ZERO',
+        index: data,
       });
     },
   };

@@ -40,279 +40,258 @@
 24    <uses-permission android:name="android.permission.WAKE_LOCK" />
 24-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-68
 24-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-65
-25    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+25    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 25-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-81
 25-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:22-78
-26    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-26-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:26:5-82
-26-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:26:22-79
-27    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-27-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:26:5-110
-27-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:26:22-107
-28
-29    <application
-29-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:10:5-30:19
-30        android:name="com.react_project.MainApplication"
-30-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:11:7-38
-31        android:allowBackup="false"
-31-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:15:7-34
-32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-32-->[androidx.core:core:1.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/51c60a74c89e63786feb7a72e94c376c/core-1.1.0/AndroidManifest.xml:24:18-86
-33        android:debuggable="true"
-34        android:icon="@mipmap/ic_launcher"
-34-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:13:7-41
-35        android:label="@string/app_name"
-35-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:12:7-39
+26    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+26-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:26:5-110
+26-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:26:22-107
+27
+28    <application
+28-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:10:5-34:19
+29        android:name="com.react_project.MainApplication"
+29-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:11:7-38
+30        android:allowBackup="false"
+30-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:15:7-34
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/51c60a74c89e63786feb7a72e94c376c/core-1.1.0/AndroidManifest.xml:24:18-86
+32        android:debuggable="true"
+33        android:icon="@mipmap/ic_launcher"
+33-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:13:7-41
+34        android:label="@string/app_name"
+34-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:12:7-39
+35        android:networkSecurityConfig="@xml/network_security_config"
+35-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:18:7-67
 36        android:roundIcon="@mipmap/ic_launcher_round"
 36-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:14:7-52
 37        android:theme="@style/AppTheme"
 37-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:16:7-38
 38        android:usesCleartextTraffic="true" >
 38-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:17:7-42
-39        <activity
-39-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:18:7-28:18
-40            android:name="com.react_project.MainActivity"
-40-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:19:9-37
-41            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-41-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:21:9-86
-42            android:label="@string/app_name"
-42-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:20:9-41
-43            android:launchMode="singleTask"
-43-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:22:9-40
-44            android:windowSoftInputMode="adjustResize" >
-44-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:23:9-51
-45            <intent-filter>
-45-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:24:9-27:25
-46                <action android:name="android.intent.action.MAIN" />
-46-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:25:13-65
-46-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:25:21-62
-47
-48                <category android:name="android.intent.category.LAUNCHER" />
-48-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:26:13-73
-48-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:26:23-70
-49            </intent-filter>
-50        </activity>
-51        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-51-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:29:7-84
-51-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:29:17-81
-52
-53        <meta-data
-53-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:70
-54            android:name="com.google.android.gms.ads.APPLICATION_ID"
-54-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-69
-55            android:value="ca-app-pub-5441323645351640~4717067143" />
-55-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-67
-56        <meta-data
-56-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:9-21:37
-57            android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
-57-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-81
-58            android:value="false" />
-58-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-34
-59
-60        <provider
-60-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-21:20
-61            android:name="androidx.core.content.FileProvider"
-61-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-62
-62            android:authorities="com.react_project.provider"
-62-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-60
-63            android:exported="false"
-63-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-37
-64            android:grantUriPermissions="true" >
-64-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-47
-65            <meta-data
-65-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-20:58
-66                android:name="android.support.FILE_PROVIDER_PATHS"
-66-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
-67                android:resource="@xml/provider_paths" />
-67-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:17-55
-68        </provider>
-69
-70        <activity
-70-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:9-25:72
-71            android:name="com.yalantis.ucrop.UCropActivity"
-71-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-60
-72            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-72-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-69
-73
-74        <provider
-74-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-18:20
-75            android:name="com.imagepicker.FileProvider"
-75-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-56
-76            android:authorities="com.react_project.provider"
-76-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-60
-77            android:exported="false"
-77-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-37
-78            android:grantUriPermissions="true" >
-78-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-47
-79            <meta-data
-79-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-20:58
-80                android:name="android.support.FILE_PROVIDER_PATHS"
-80-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
-81                android:resource="@xml/provider_paths" />
-81-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:17-55
-82        </provider>
-83        <provider
-83-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
-84            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
-84-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-83
-85            android:authorities="com.react_project.fileprovider"
-85-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-64
-86            android:exported="false"
-86-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
-87            android:grantUriPermissions="true" >
-87-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
-88            <meta-data
-88-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-20:58
-89                android:name="android.support.FILE_PROVIDER_PATHS"
-89-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
-90                android:resource="@xml/file_provider_paths" />
-90-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:17-55
-91        </provider>
-92
-93        <activity
-93-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:23:9-27:75
-94            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-94-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:24:13-93
-95            android:excludeFromRecents="true"
-95-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:25:13-46
-96            android:exported="false"
-96-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:26:13-37
-97            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-97-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:27:13-72
-98        <!--
-99            Service handling Google Sign-In user revocation. For apps that do not integrate with
-100            Google Sign-In, this service will never be started.
-101        -->
-102        <service
-102-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:33:9-37:51
-103            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-103-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:34:13-89
-104            android:exported="true"
-104-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:35:13-36
-105            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-105-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:36:13-107
-106            android:visibleToInstantApps="true" />
-106-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:37:13-48
-107        <service
-107-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c67bc3d0ac69dfe086f68180c44a17ff/play-services-measurement-api-17.4.3/AndroidManifest.xml:27:9-33:19
-108            android:name="com.google.firebase.components.ComponentDiscoveryService"
-108-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c67bc3d0ac69dfe086f68180c44a17ff/play-services-measurement-api-17.4.3/AndroidManifest.xml:28:13-84
-109            android:directBootAware="true"
-109-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
-110            android:exported="false" >
-110-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c67bc3d0ac69dfe086f68180c44a17ff/play-services-measurement-api-17.4.3/AndroidManifest.xml:29:13-37
-111            <meta-data
-111-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c67bc3d0ac69dfe086f68180c44a17ff/play-services-measurement-api-17.4.3/AndroidManifest.xml:30:13-32:85
-112                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-112-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c67bc3d0ac69dfe086f68180c44a17ff/play-services-measurement-api-17.4.3/AndroidManifest.xml:31:17-139
-113                android:value="com.google.firebase.components.ComponentRegistrar" />
-113-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c67bc3d0ac69dfe086f68180c44a17ff/play-services-measurement-api-17.4.3/AndroidManifest.xml:32:17-82
-114            <meta-data
-114-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:32:13-34:85
-115                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-115-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:33:17-96
-116                android:value="com.google.firebase.components.ComponentRegistrar" />
-116-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:34:17-82
-117            <meta-data
-117-->[com.google.firebase:firebase-installations:16.2.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/24c742431253f4b72d438133116b1a60/firebase-installations-16.2.1/AndroidManifest.xml:17:13-19:85
-118                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-118-->[com.google.firebase:firebase-installations:16.2.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/24c742431253f4b72d438133116b1a60/firebase-installations-16.2.1/AndroidManifest.xml:18:17-127
-119                android:value="com.google.firebase.components.ComponentRegistrar" />
-119-->[com.google.firebase:firebase-installations:16.2.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/24c742431253f4b72d438133116b1a60/firebase-installations-16.2.1/AndroidManifest.xml:19:17-82
-120        </service>
-121
-122        <receiver
-122-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:37:9-44:20
-123            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-123-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:38:13-78
-124            android:exported="true"
-124-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:39:13-36
-125            android:permission="com.google.android.c2dm.permission.SEND" >
-125-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:40:13-73
-126            <intent-filter>
-126-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:41:13-43:29
-127                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-127-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:42:17-81
-127-->[com.google.firebase:firebase-iid:20.1.5] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0e74e9fd5fc5b42223e01e8c833de65c/firebase-iid-20.1.5/AndroidManifest.xml:42:25-78
-128            </intent-filter>
-129        </receiver>
-130
-131        <activity
-131-->[com.google.android.gms:play-services-base:17.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/2bf143a8a6d9cc9b01c998d0d6ca7843/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
-132            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-132-->[com.google.android.gms:play-services-base:17.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/2bf143a8a6d9cc9b01c998d0d6ca7843/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
-133            android:exported="false"
-133-->[com.google.android.gms:play-services-base:17.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/2bf143a8a6d9cc9b01c998d0d6ca7843/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
-134            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-134-->[com.google.android.gms:play-services-base:17.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/2bf143a8a6d9cc9b01c998d0d6ca7843/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
-135
-136        <provider
-136-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-137            android:name="com.google.firebase.provider.FirebaseInitProvider"
-137-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-138            android:authorities="com.react_project.firebaseinitprovider"
-138-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-139            android:exported="false"
-139-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-140            android:initOrder="100" />
-140-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-141
-142        <receiver
-142-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:29:9-33:20
-143            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-143-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:30:13-85
+39        <meta-data
+39-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:19:7-21:69
+40            android:name="com.google.android.gms.ads.APPLICATION_ID"
+40-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:20:13-69
+41            android:value="ca-app-pub-5441323645351640~4717067143" />
+41-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:21:13-67
+42
+43        <activity
+43-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:22:7-32:18
+44            android:name="com.react_project.MainActivity"
+44-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:23:9-37
+45            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+45-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:25:9-86
+46            android:label="@string/app_name"
+46-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:24:9-41
+47            android:launchMode="singleTask"
+47-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:26:9-40
+48            android:windowSoftInputMode="adjustResize" >
+48-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:27:9-51
+49            <intent-filter>
+49-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:28:9-31:25
+50                <action android:name="android.intent.action.MAIN" />
+50-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:29:13-65
+50-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:29:21-62
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:30:13-73
+52-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:30:23-70
+53            </intent-filter>
+54        </activity>
+55        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+55-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:33:7-84
+55-->/Users/deepanshmakkar/Desktop/Quizartup/react_project/android/app/src/main/AndroidManifest.xml:33:17-81
+56
+57        <meta-data
+57-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:9-21:37
+58            android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
+58-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-81
+59            android:value="false" />
+59-->[:react-native-firebase_admob] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-34
+60
+61        <provider
+61-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-21:20
+62            android:name="androidx.core.content.FileProvider"
+62-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-62
+63            android:authorities="com.react_project.provider"
+63-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-60
+64            android:exported="false"
+64-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-37
+65            android:grantUriPermissions="true" >
+65-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-47
+66            <meta-data
+66-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-20:58
+67                android:name="android.support.FILE_PROVIDER_PATHS"
+67-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
+68                android:resource="@xml/provider_paths" />
+68-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:17-55
+69        </provider>
+70
+71        <activity
+71-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:9-25:72
+72            android:name="com.yalantis.ucrop.UCropActivity"
+72-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-60
+73            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+73-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-69
+74
+75        <provider
+75-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-18:20
+76            android:name="com.imagepicker.FileProvider"
+76-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-56
+77            android:authorities="com.react_project.provider"
+77-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-60
+78            android:exported="false"
+78-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-37
+79            android:grantUriPermissions="true" >
+79-->[:react-native-image-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-47
+80            <meta-data
+80-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-20:58
+81                android:name="android.support.FILE_PROVIDER_PATHS"
+81-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
+82                android:resource="@xml/provider_paths" />
+82-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:17-55
+83        </provider>
+84        <provider
+84-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
+85            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+85-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-83
+86            android:authorities="com.react_project.fileprovider"
+86-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-64
+87            android:exported="false"
+87-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+88            android:grantUriPermissions="true" >
+88-->[:react-native-webview] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+89            <meta-data
+89-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-20:58
+90                android:name="android.support.FILE_PROVIDER_PATHS"
+90-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-67
+91                android:resource="@xml/file_provider_paths" />
+91-->[:react-native-image-crop-picker] /Users/deepanshmakkar/Desktop/Quizartup/react_project/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:17-55
+92        </provider>
+93
+94        <activity
+94-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:23:9-27:75
+95            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+95-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:24:13-93
+96            android:excludeFromRecents="true"
+96-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:25:13-46
+97            android:exported="false"
+97-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:26:13-37
+98            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+98-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:27:13-72
+99        <!--
+100            Service handling Google Sign-In user revocation. For apps that do not integrate with
+101            Google Sign-In, this service will never be started.
+102        -->
+103        <service
+103-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:33:9-37:51
+104            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+104-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:34:13-89
+105            android:exported="true"
+105-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:35:13-36
+106            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+106-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:36:13-107
+107            android:visibleToInstantApps="true" />
+107-->[com.google.android.gms:play-services-auth:18.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/e729853c33cd47de0b0483b3a2becce0/play-services-auth-18.1.0/AndroidManifest.xml:37:13-48
+108
+109        <activity
+109-->[com.google.android.gms:play-services-base:17.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/2bf143a8a6d9cc9b01c998d0d6ca7843/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+110            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+110-->[com.google.android.gms:play-services-base:17.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/2bf143a8a6d9cc9b01c998d0d6ca7843/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+111            android:exported="false"
+111-->[com.google.android.gms:play-services-base:17.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/2bf143a8a6d9cc9b01c998d0d6ca7843/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+112            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+112-->[com.google.android.gms:play-services-base:17.1.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/2bf143a8a6d9cc9b01c998d0d6ca7843/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+113
+114        <service
+114-->[com.google.android.gms:play-services-measurement-api:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/290902b60ac78d89aa645bd0a79f7add/play-services-measurement-api-17.4.4/AndroidManifest.xml:27:9-33:19
+115            android:name="com.google.firebase.components.ComponentDiscoveryService"
+115-->[com.google.android.gms:play-services-measurement-api:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/290902b60ac78d89aa645bd0a79f7add/play-services-measurement-api-17.4.4/AndroidManifest.xml:28:13-84
+116            android:directBootAware="true"
+116-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+117            android:exported="false" >
+117-->[com.google.android.gms:play-services-measurement-api:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/290902b60ac78d89aa645bd0a79f7add/play-services-measurement-api-17.4.4/AndroidManifest.xml:29:13-37
+118            <meta-data
+118-->[com.google.android.gms:play-services-measurement-api:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/290902b60ac78d89aa645bd0a79f7add/play-services-measurement-api-17.4.4/AndroidManifest.xml:30:13-32:85
+119                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+119-->[com.google.android.gms:play-services-measurement-api:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/290902b60ac78d89aa645bd0a79f7add/play-services-measurement-api-17.4.4/AndroidManifest.xml:31:17-139
+120                android:value="com.google.firebase.components.ComponentRegistrar" />
+120-->[com.google.android.gms:play-services-measurement-api:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/290902b60ac78d89aa645bd0a79f7add/play-services-measurement-api-17.4.4/AndroidManifest.xml:32:17-82
+121            <meta-data
+121-->[com.google.firebase:firebase-installations:16.3.2] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d4fa9ae8f7b0112c59ca0d4a260f1536/firebase-installations-16.3.2/AndroidManifest.xml:17:13-19:85
+122                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+122-->[com.google.firebase:firebase-installations:16.3.2] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d4fa9ae8f7b0112c59ca0d4a260f1536/firebase-installations-16.3.2/AndroidManifest.xml:18:17-127
+123                android:value="com.google.firebase.components.ComponentRegistrar" />
+123-->[com.google.firebase:firebase-installations:16.3.2] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d4fa9ae8f7b0112c59ca0d4a260f1536/firebase-installations-16.3.2/AndroidManifest.xml:19:17-82
+124        </service>
+125
+126        <provider
+126-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+127            android:name="com.google.firebase.provider.FirebaseInitProvider"
+127-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+128            android:authorities="com.react_project.firebaseinitprovider"
+128-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+129            android:exported="false"
+129-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+130            android:initOrder="100" />
+130-->[com.google.firebase:firebase-common:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/87278ed3548a3f4646bbd9fdc553f210/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+131
+132        <receiver
+132-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:29:9-33:20
+133            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+133-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:30:13-85
+134            android:enabled="true"
+134-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:31:13-35
+135            android:exported="false" >
+135-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:32:13-37
+136        </receiver>
+137
+138        <service
+138-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:35:9-38:40
+139            android:name="com.google.android.gms.measurement.AppMeasurementService"
+139-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:36:13-84
+140            android:enabled="true"
+140-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:37:13-35
+141            android:exported="false" />
+141-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:38:13-37
+142        <service
+142-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:39:9-43:72
+143            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+143-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:40:13-87
 144            android:enabled="true"
-144-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:31:13-35
-145            android:exported="false" >
-145-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:32:13-37
-146        </receiver>
-147
-148        <service
-148-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:35:9-38:40
-149            android:name="com.google.android.gms.measurement.AppMeasurementService"
-149-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:36:13-84
-150            android:enabled="true"
-150-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:37:13-35
-151            android:exported="false" />
-151-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:38:13-37
-152        <service
-152-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:39:9-43:72
-153            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-153-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:40:13-87
-154            android:enabled="true"
-154-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:41:13-35
-155            android:exported="false"
-155-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:42:13-37
-156            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-156-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/c531877ac574da7730afb759f69e7e3a/play-services-measurement-17.4.3/AndroidManifest.xml:43:13-69
-157        <activity
-157-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:29:9-33:64
-158            android:name="com.google.android.gms.ads.AdActivity"
-158-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:30:13-65
-159            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-159-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:31:13-122
-160            android:exported="false"
-160-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:32:13-37
-161            android:theme="@android:style/Theme.Translucent" />
-161-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:33:13-61
-162
-163        <provider
-163-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:35:9-39:39
-164            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-164-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:36:13-76
-165            android:authorities="com.react_project.mobileadsinitprovider"
-165-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:37:13-73
-166            android:exported="false"
-166-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:38:13-37
-167            android:initOrder="100" />
-167-->[com.google.android.gms:play-services-ads-lite:19.2.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/219488ff633ac9195bc10d6f3fd78180/play-services-ads-lite-19.2.0/AndroidManifest.xml:39:13-36
-168
-169        <meta-data
-169-->[com.google.android.gms:play-services-basement:17.1.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/6816c8808a046deddd54b5071000bde3/jetified-play-services-basement-17.1.1/AndroidManifest.xml:23:9-25:69
-170            android:name="com.google.android.gms.version"
-170-->[com.google.android.gms:play-services-basement:17.1.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/6816c8808a046deddd54b5071000bde3/jetified-play-services-basement-17.1.1/AndroidManifest.xml:24:13-58
-171            android:value="@integer/google_play_services_version" />
-171-->[com.google.android.gms:play-services-basement:17.1.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/6816c8808a046deddd54b5071000bde3/jetified-play-services-basement-17.1.1/AndroidManifest.xml:25:13-66
-172    </application>
-173
-174</manifest>
+144-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:41:13-35
+145            android:exported="false"
+145-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:42:13-37
+146            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+146-->[com.google.android.gms:play-services-measurement:17.4.4] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/d6c7d62b20c5f57218b0b402dcfb5f3b/play-services-measurement-17.4.4/AndroidManifest.xml:43:13-69
+147        <activity
+147-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:29:9-33:64
+148            android:name="com.google.android.gms.ads.AdActivity"
+148-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:30:13-65
+149            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+149-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:31:13-122
+150            android:exported="false"
+150-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:32:13-37
+151            android:theme="@android:style/Theme.Translucent" />
+151-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:33:13-61
+152
+153        <provider
+153-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:35:9-39:39
+154            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+154-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:36:13-76
+155            android:authorities="com.react_project.mobileadsinitprovider"
+155-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:37:13-73
+156            android:exported="false"
+156-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:38:13-37
+157            android:initOrder="100" />
+157-->[com.google.android.gms:play-services-ads-lite:19.3.0] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/0fbba882d876477a1a9aff16b420be3c/play-services-ads-lite-19.3.0/AndroidManifest.xml:39:13-36
+158
+159        <meta-data
+159-->[com.google.android.gms:play-services-basement:17.1.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/6816c8808a046deddd54b5071000bde3/jetified-play-services-basement-17.1.1/AndroidManifest.xml:23:9-25:69
+160            android:name="com.google.android.gms.version"
+160-->[com.google.android.gms:play-services-basement:17.1.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/6816c8808a046deddd54b5071000bde3/jetified-play-services-basement-17.1.1/AndroidManifest.xml:24:13-58
+161            android:value="@integer/google_play_services_version" />
+161-->[com.google.android.gms:play-services-basement:17.1.1] /Users/deepanshmakkar/.gradle/caches/transforms-2/files-2.1/6816c8808a046deddd54b5071000bde3/jetified-play-services-basement-17.1.1/AndroidManifest.xml:25:13-66
+162    </application>
+163
+164</manifest>
