@@ -42,13 +42,8 @@ const onShare = async () => {
 function Result(props) {
   let navigation = props.navigation;
 
-<<<<<<< HEAD
   const [score2, setScore2] = useState(props.opponentScore); //props.opponentScore
   const [isWinner, setIsWinner] = useState(9); //9
-=======
-  const [score2, setScore2] = useState(props.opponentScore); //kal yaha kaam karna hai
-  const [isWinner, setIsWinner] = useState(9);
->>>>>>> cb6aa231a95b45d62bd508bfe61a53f43d8f20ce
   const [temp, setTemp] = useState(false);
 
   const [email, setEmail] = useState('');
@@ -115,28 +110,6 @@ function Result(props) {
     setTemp(true);
   });
 
-<<<<<<< HEAD
-=======
-  async function compare() {
-    console.log(props.score);
-    console.log(score2);
-    if (temp == true) {
-      if (props.score > score2) {
-        await setIsWinner(1);
-        await socket.emit('winner', email);
-      }
-      if (props.score < score2) {
-        await setIsWinner(0);
-        await socket.emit('notwinner', email);
-      }
-      if (props.score === score2) {
-        await setIsWinner(-1);
-      }
-    }
-    setTemp(false);
-  }
-
->>>>>>> cb6aa231a95b45d62bd508bfe61a53f43d8f20ce
   async function compare1(recieved_email) {
     console.log(props.score);
     console.log(score2);
@@ -153,11 +126,6 @@ function Result(props) {
     }
   }
 
-<<<<<<< HEAD
-=======
-  compare();
-
->>>>>>> cb6aa231a95b45d62bd508bfe61a53f43d8f20ce
   return score2 !== 0 && isWinner !== 9 ? (
     <ScrollView style={{backgroundColor: 'white'}}>
       <View style={{flex: 1, backgroundColor: '#fff'}}>
